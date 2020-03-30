@@ -21,13 +21,22 @@ Promise.all([preloadImages()]).then(() => {
 
 
 // Close modal
-document.getElementById('jsTeamClose').addEventListener('click', () => {
-  body.classList.remove('build__team');
-});
+document.getElementById('jsTeamClose').addEventListener('click', closeTeam);
 
 // Copy button
 btnCopy.addEventListener('click', copyText);
 
+document.onkeydown = function(evt) {
+  evt = evt || window.event;
+  if (evt.keyCode == 27 && body.classList.contains('build__team'))  {
+    closeTeam();
+  }
+};
+
+
+function closeTeam() {
+  body.classList.remove('build__team');
+}
 
 //  Enable disable button
 form.addEventListener('click', () => {
