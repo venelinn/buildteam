@@ -1,0 +1,19 @@
+// USAGE:
+// This works ONLY with Pixels:
+// font-size | line-height | letter-spacing
+@mixin font-size($size: true, $lh: false, $ls: false) {
+  @if $size {
+    font-size: $size; // TODO: Remove after we are done with the typography
+    font-size: calcRem($size);
+  }
+
+  @if $lh {
+    line-height: $lh; // TODO: Remove after we are done with the typography
+    line-height: calcRem($lh);
+  }
+
+  @if $ls {
+    letter-spacing: $ls; // TODO: Remove after we are done with the typography
+    letter-spacing: calcRem($ls);
+  }
+}
