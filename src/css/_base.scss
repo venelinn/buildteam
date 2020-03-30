@@ -1,4 +1,9 @@
 // USAGE:
+// Fluid Type Logic
+// 14px - minimum size at the smallest viewport width of 300px
+// 26px - maximum size at the largest viewport width of 1600px
+// font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+
 // This works ONLY with Pixels:
 // font-size | line-height | letter-spacing
 @mixin font-size($size: true, $lh: false, $ls: false) {
