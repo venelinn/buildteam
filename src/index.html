@@ -38,8 +38,16 @@
 					</div>
 				</form>
 				<div class="leave-note">
-					<textarea class="textarea" placeholder="Leave a note..."></textarea>
-					<button class="btn" type="button">Save</button>
+					<form class="leave-note__form jsLeaveNote" name="leavenote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+						<div hidden aria-hidden="true">
+							<label>
+								Don’t fill this out if you're human:
+								<input name="bot-field" />
+							</label>
+						</div>
+						<textarea class="textarea" placeholder="Leave a note..."></textarea>
+						<button class="btn" type="submit">Sent</button>
+					</form>
 				</div>
 				<div class="team">
 					<div class="team__close" id="jsTeamClose">

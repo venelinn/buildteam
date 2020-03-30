@@ -370,6 +370,12 @@ input[type="checkbox"]:checked {
 
 .leave-note {
   display: var(--note, none);
+  &__form {
+    display: grid;
+    grid-gap: 1rem;
+    justify-items: flex-end;
+    margin-bottom: 2rem;
+  }
 }
 
 .with-team {
@@ -382,10 +388,7 @@ input[type="checkbox"]:checked {
     text-align: center;
   }
   .leave-note {
-    --note: grid;
-    grid-gap: 1rem;
-    justify-items: flex-end;
-    margin-bottom: 2rem;
+    --note: block;
   }
 }
 

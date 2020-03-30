@@ -5,7 +5,7 @@ const body = document.querySelector('body')
 const btnSubmit = document.getElementById("btnUserUrl");
 const result = document.getElementById("selectedUsersUrl");
 const btnCopy = document.getElementById('jsCopy');
-
+const noteForm = document.querySelector('.jsLeaveNote')
 
 // Preload images
 const preloadImages = () => {
@@ -137,3 +137,25 @@ function copyText() {
   //console.log("Copied the text: " + copyText.value);
 }
 
+
+const processForm = form => {
+  const data = new FormData(form)
+  data.append('jsLeaveNote', 'leavenote');
+  fetch('/', {
+    method: 'POST',
+    body: data,
+  })
+  .then(() => {
+    form.innerHTML = `<div class="form--success">Note Sent! Thank you!.</div>`;
+  })
+  .catch(error => {
+    form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+  })
+}
+
+if (noteForm) {
+  noteForm.addEventListener('submit', e => {
+    e.preventDefault();
+    processForm(noteForm);
+  })
+}
