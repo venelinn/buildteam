@@ -2,7 +2,8 @@
   {
     "id": 1,
     "name": "Patrick Rønning",
-    "email": "Sincere@april.biz",
+    "email": "plr@signifly.com",
+    "phone": "+45 4031 2498",
     "image": "https://www.datocms-assets.com/7718/1545302732-plr-main.jpg?auto=compress&w=389&dpr=1&q=70",
     "role": "Partner & Brand Strategist",
     "desc": "Generator of sustainable business transformations"
@@ -10,8 +11,8 @@
   {
     "id": 2,
     "name": "Mads Kjærgaard",
-    "email": "Shanna@melissa.tv",
-    "phone": "010-692-6593 x09125",
+    "email": "mk@signifly.com",
+    "phone": "+45 2785 1529",
     "role": "Consultant",
     "image": "https://www.datocms-assets.com/7718/1545302592-mk-main.jpg?auto=compress&w=389&dpr=1&q=70",
     "desc": "Helping ambitious organizations realize their digital potential"
@@ -19,7 +20,8 @@
   {
     "id": 3,
     "name": "Sara Friis Bache",
-    "email": "joe@melissa.tv",
+    "email": "sb@signifly.com",
+    "phone": "+45 4093 8119",
     "role": "Innovation Lead",
     "image": "https://www.datocms-assets.com/7718/1553180679-ntk9037-edit.jpg?auto=compress&w=389&dpr=1&q=70",
     "desc": "Enforce a timeline with a firm hand and a big smile."
@@ -27,7 +29,8 @@
   {
     "id": 4,
     "name": "Malthe Mogensen",
-    "email": "joe@melissa.tv",
+    "email": "mm@signifly.com",
+    "phone": "+45 4093 8119",
     "role": "Strategy Lead",
     "image": "https://www.datocms-assets.com/7718/1558702492-mm.jpg?auto=compress&w=389&dpr=1&q=70",
     "desc": "Develop creative concepts that propel and sustain digital transformations"
@@ -35,7 +38,8 @@
   {
     "id": 5,
     "name": "Søren Schrøder",
-    "email": "joe@melissa.tv",
+    "email": "ss@signifly.com",
+    "phone": "+45 4093 8119",
     "role": "Designer",
     "image": "https://www.datocms-assets.com/7718/1545295667-ss-main.jpg?auto=compress&w=389&dpr=1&q=70",
     "desc": "Solving complexity with intuitive design and deep user understanding"
@@ -43,10 +47,10 @@
   {
     "id": 6,
     "name": "Mads Lindum",
-    "email": "joe@melissa.tv",
+    "email": "ml@signifly.com",
+    "phone": "+45 4093 8119",
     "role": "Marketing & Branding Strategist",
     "image": "https://www.datocms-assets.com/7718/1553180777-ntk9864-edit.jpg?auto=compress&w=389&dpr=1&q=70",
     "desc": "Develop communication that creates value and drives results"
   }
-
 ]

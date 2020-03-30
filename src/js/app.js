@@ -99,8 +99,12 @@ function getUser(user, isReadOnly) {
 					<label for="${user.id}">
 						<div class="user__image" >
 							<img src="${user.image}" alt="${user.name}" class="jsImage" />
-							<div class="user__desc" >
-								<span class="user__desc__text">${user.desc}</span>
+              <div class="user__desc" >
+                <div class="user__desc__text">
+                  <span class="user__desc__desc">${user.desc}</span>
+                  <span class="user__desc__phone"><strong>Phone:</strong> ${user.phone}</span>
+                  <span class="user__desc__email"><strong>E-mail:</strong> ${user.email}</span>
+                </div>
 							</div>
 							<span class="checkbox"></span>
 						</div>
