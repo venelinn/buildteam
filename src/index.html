@@ -38,14 +38,15 @@
 					</div>
 				</form>
 				<div class="leave-note">
-					<form class="leave-note__form jsLeaveNote" name="leavenote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+					<form class="leave-note__form jsNoteForm" name="noteform" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 						<div hidden aria-hidden="true">
 							<label>
 								Don’t fill this out if you're human:
 								<input name="bot-field" />
 							</label>
 						</div>
-						<textarea class="textarea" placeholder="Leave a note..."></textarea>
+						<input type="hidden" name="team" id="jsNoteTeam" value="asdas" />
+						<textarea class="textarea" placeholder="Leave a note..." name="note" id="note" required></textarea>
 						<button class="btn" type="submit">Sent</button>
 					</form>
 				</div>

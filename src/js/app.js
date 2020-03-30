@@ -5,7 +5,7 @@ const body = document.querySelector('body')
 const btnSubmit = document.getElementById("btnUserUrl");
 const result = document.getElementById("selectedUsersUrl");
 const btnCopy = document.getElementById('jsCopy');
-const noteForm = document.querySelector('.jsLeaveNote')
+const noteForm = document.querySelector('.jsNoteForm')
 
 // Preload images
 const preloadImages = () => {
@@ -69,6 +69,8 @@ function init() {
 
   if (isReadonly) {
     btnSubmit.style.display = "none";
+    document.getElementById("jsNoteTeam").value = window.location.href;
+    //console.log(window.location.href)
   } else {
     btnSubmit.addEventListener("click", userUrlBthHandler);
   }
@@ -140,13 +142,14 @@ function copyText() {
 
 const processForm = form => {
   const data = new FormData(form)
-  data.append('jsLeaveNote', 'leavenote');
+  data.append('form-name', 'noteform');
+  console.log(data)
   fetch('/', {
     method: 'POST',
     body: data,
   })
   .then(() => {
-    form.innerHTML = `<div class="form--success">Note Sent! Thank you!.</div>`;
+    form.innerHTML = `<div class="form--success">Note Sent! Thank you!</div>`;
   })
   .catch(error => {
     form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
