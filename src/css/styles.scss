@@ -27,8 +27,11 @@ body {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.4;
+  margin: 0;
+  padding: 0;
 }
 
+// Titles
 .title {
   font-family: var(--font-heading);
   text-transform: uppercase;
@@ -41,7 +44,6 @@ body {
 .title--h2 {
   font-size: calc(20px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
-
 
 // Button
 .btn {
@@ -84,6 +86,7 @@ body {
   }
 }
 
+// Layout
 .page {
   max-width: 1000px;
   margin: 0 auto;
@@ -95,7 +98,6 @@ body {
   height: 100%;
 }
 
-// Header
 .page__header {
   flex: 0 0 auto;
   display: flex;
@@ -137,7 +139,6 @@ input {
 }
 
 // Checkbox
-
 input[type="checkbox"] {
   position: absolute;
   top: 0;
@@ -299,6 +300,7 @@ input[type="checkbox"]:checked {
     display: none;
   }
 }
+
 // Overlay
 .team {
   display: none;
@@ -370,7 +372,6 @@ input[type="checkbox"]:checked {
   overflow: hidden;
 }
 
-
 // Leave a note
 .leave-note {
   display: var(--note, none);
@@ -385,6 +386,7 @@ input[type="checkbox"]:checked {
   }
 }
 
+// Form messages
 .msg {
   font-weight: 400;
   &--error {
@@ -419,7 +421,7 @@ input[type="checkbox"]:checked {
   resize: vertical;
 }
 
-/* Page Loader */
+// Page Loader
 .js {
   .loading {
     &:before,
@@ -448,7 +450,6 @@ input[type="checkbox"]:checked {
     }
   }
 }
-
 
 @keyframes loaderAnim {
 	to {

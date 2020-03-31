@@ -19,13 +19,13 @@ Promise.all([preloadImages()]).then(() => {
   init();
 });
 
-
 // Close modal
 document.getElementById('jsTeamClose').addEventListener('click', closeTeam);
 
 // Copy button
 btnCopy.addEventListener('click', copyText);
 
+// Handle ESC key
 document.onkeydown = function(evt) {
   evt = evt || window.event;
   if (evt.keyCode == 27 && body.classList.contains('build__team'))  {
@@ -33,7 +33,7 @@ document.onkeydown = function(evt) {
   }
 };
 
-
+// Close overlay
 function closeTeam() {
   body.classList.remove('build__team');
 }
@@ -54,34 +54,26 @@ function init() {
   const isReadonly = !!window.location.search;
 
   if (isReadonly) {
-		let queryParam = window.location.search.replace("?team=", "");
+    btnSubmit.style.display = "none";
+    document.getElementById("jsNoteTeam").value = window.location.href;
+    let queryParam = window.location.search.replace("?team=", "");
     if (queryParam) {
 			body.classList.add('with-team');
       const usersToDisplay = queryParam.split(",");
       if (usersToDisplay.length > 0) {
         users = usersDB.filter(user =>
           usersToDisplay.includes(user.id.toString())
-        );
+          );
       }
     }
-  }
-
-
-  if (isReadonly) {
-    btnSubmit.style.display = "none";
-    document.getElementById("jsNoteTeam").value = window.location.href;
-    //console.log(window.location.href)
   } else {
     btnSubmit.addEventListener("click", userUrlBthHandler);
   }
 
-  document.getElementById("usersList").innerHTML = getUserList(
-    users,
-    isReadonly
-  );
+  document.getElementById("usersList").innerHTML = getUserList(users, isReadonly);
 }
 
-
+// Building the team
 function userUrlBthHandler() {
   const allCheckboxes = form.querySelectorAll("input[type=checkbox]");
   const selectedCheckBoxes = [...allCheckboxes].filter(el => el.checked);
@@ -97,38 +89,41 @@ function userUrlBthHandler() {
 	body.classList.add('build__team');
 }
 
+// Build users list
 function getUserList(users, isReadOnly) {
   const allUsers = users.map(user => getUser(user, isReadOnly));
   return allUsers.join("");
 }
 
+// User list template
 function getUser(user, isReadOnly) {
   return `
-      <div class="user">
-        <input type="checkbox" id="${user.id}" value="${user.id}" ${isReadOnly ? "hidden" : ''} >
-				<div class="user__info">
-					<label for="${user.id}">
-						<div class="user__image" >
-							<img src="${user.image}" alt="${user.name}" class="jsImage" />
-              <div class="user__desc" >
-                <div class="user__desc__text">
-                  <span class="user__desc__desc">${user.desc}</span>
-                  <span class="user__desc__phone"><strong>Phone:</strong> ${user.phone}</span>
-                  <span class="user__desc__email"><strong>E-mail:</strong> ${user.email}</span>
-                </div>
-							</div>
-							<span class="checkbox"></span>
-						</div>
-						<div class="user__data">
-							<h2 class="user__name">${user.name}</h2>
-							<p>${user.role}</p>
-						</div>
-					</label>
-				</div>
-      </div>`;
+    <div class="user">
+      <input type="checkbox" id="${user.id}" value="${user.id}" ${isReadOnly ? "hidden" : ''} >
+      <div class="user__info">
+        <label for="${user.id}">
+          <div class="user__image" >
+            <img src="${user.image}" alt="${user.name}" class="jsImage" />
+            <div class="user__desc" >
+              <div class="user__desc__text">
+                <span class="user__desc__desc">${user.desc}</span>
+                <span class="user__desc__phone"><strong>Phone:</strong> ${user.phone}</span>
+                <span class="user__desc__email"><strong>E-mail:</strong> ${user.email}</span>
+              </div>
+            </div>
+            <span class="checkbox"></span>
+          </div>
+          <div class="user__data">
+            <h2 class="user__name">${user.name}</h2>
+            <p>${user.role}</p>
+          </div>
+        </label>
+      </div>
+    </div>
+  `;
 }
 
-
+// Copy text to clipboard
 function copyText() {
   var copyText = result;
   copyText.select();
@@ -136,10 +131,9 @@ function copyText() {
   document.execCommand("copy");
   btnCopy.classList.add('btn--copied');
   btnCopy.innerHTML = 'Copied'
-  //console.log("Copied the text: " + copyText.value);
 }
 
-
+// Leave a note
 const processForm = form => {
   const data = new FormData(form)
   data.append('form-name', 'noteform');
