@@ -7,16 +7,19 @@ const result = document.getElementById("selectedUsersUrl");
 const btnCopy = document.getElementById('jsCopy');
 const noteForm = document.querySelector('.jsNoteForm')
 
-// Preload images
-const preloadImages = () => {
+ // Preload images
+ const preloadImages = () => {
   return new Promise((resolve, reject) => {
-      imagesLoaded(document.querySelectorAll('.jsImage'), resolve);
+    imagesLoaded(document.querySelectorAll('.jsImage'), resolve);
   });
 };
 
-Promise.all([preloadImages()]).then(() => {
-  document.body.classList.remove('loading');
-  init();
+// And then..
+preloadImages().then(() => {
+  setInterval(() => {
+    document.body.classList.remove('loading');
+  }, 1000);
+  init()
 });
 
 // Close modal
