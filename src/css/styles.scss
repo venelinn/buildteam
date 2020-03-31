@@ -9,6 +9,8 @@
   --font-base: 'Lato', sans-serif;
   --font-heading: 'Anton', sans-serif;
   --color-bg: #fff;
+  --color-success: #8bc53f;
+  --color-error: #ee4036;
 }
 
 body, html {
@@ -297,7 +299,7 @@ input[type="checkbox"]:checked {
     display: none;
   }
 }
-
+// Overlay
 .team {
   display: none;
   .build__team & {
@@ -368,15 +370,31 @@ input[type="checkbox"]:checked {
   overflow: hidden;
 }
 
+
+// Leave a note
 .leave-note {
   display: var(--note, none);
   &__form {
     display: grid;
     grid-gap: 1rem;
-    justify-items: flex-end;
+    justify-items: var(--note-align, flex-end);;
     margin-bottom: 2rem;
+    &.sent {
+      --note-align: center;
+    }
   }
 }
+
+.msg {
+  font-weight: 400;
+  &--error {
+    color: var(--color-error);
+  }
+  &--success {
+    color: var(--color-success);
+  }
+}
+
 
 .with-team {
   .content__header--default,

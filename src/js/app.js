@@ -149,10 +149,11 @@ const processForm = form => {
     body: data,
   })
   .then(() => {
-    form.innerHTML = `<div class="form--success">Note Sent! Thank you!</div>`;
+    form.classList.add('sent');
+    form.innerHTML = `<div class="msg msg--success">The note has been successfully sent!</div>`;
   })
   .catch(error => {
-    form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+    form.innerHTML = `<div class="msg msg--error">Error: ${error}</div>`;
   })
 }
 
